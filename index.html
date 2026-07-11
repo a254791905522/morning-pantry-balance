@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morning Pantry Balance</title>
+  <meta name="description" content="Plan seven days of breakfast from a limited pantry. Match calorie and macro targets to keep your week on track.">
+  <style>
+    :root {
+      --bg: #1a1410;
+      --surface: #26201a;
+      --text: #f5ede0;
+      --muted: #b8a890;
+      --accent: #e67e22;
+      --accent-soft: #f5b955;
+      --success: #2ecc71;
+      --line: rgba(245, 237, 224, 0.12);
+      --card: #2e261e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .hero {
+      text-align: center;
+      padding: 80px 0 48px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(230, 126, 34, 0.15);
+      color: var(--accent-soft);
+      border: 1px solid rgba(230, 126, 34, 0.3);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    .subtitle {
+      font-size: 20px;
+      color: var(--accent-soft);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .intro {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    section {
+      padding: 48px 0;
+    }
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .shot-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .shot-card img {
+      width: 100%;
+      display: block;
+    }
+    .shot-card .body {
+      padding: 16px 20px;
+    }
+    .shot-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .shot-card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .card p {
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .step-num {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .feature-card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .info-item .label {
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .info-item .value {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 20px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    footer div {
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    footer a {
+      color: var(--accent-soft);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <div class="badge">Games / Puzzle</div>
+      <h1>Morning Pantry Balance</h1>
+      <p class="subtitle">Build 7 balanced breakfasts.</p>
+      <p class="intro">Plan seven days of breakfast from a limited pantry. Each day has a calorie target and macro goals for carbs, protein, and fat. Use every ingredient wisely, because the pantry must last the whole week.</p>
+    </header>
+
+    <section class="screens">
+      <div class="grid">
+        <div class="shot-card">
+          <img src="screenshots_65/01_menu.jpg" alt="Main menu of Morning Pantry Balance">
+          <div class="body">
+            <h3>Main Menu</h3>
+            <p>Start a new week, jump to the level select screen, or adjust sound and haptics settings.</p>
+          </div>
+        </div>
+        <div class="shot-card">
+          <img src="screenshots_65/02_gameplay.jpg" alt="Planning a breakfast plate with food cards">
+          <div class="body">
+            <h3>Daily Planning</h3>
+            <p>Tap food cards to add items to the plate. Track calories and macros against the day's target.</p>
+          </div>
+        </div>
+        <div class="shot-card">
+          <img src="screenshots_65/03_gameplay.jpg" alt="Calorie and macro target bar">
+          <div class="body">
+            <h3>Target Tracking</h3>
+            <p>Watch the calorie bar fill as you build the plate. Stay within the target range to complete the day.</p>
+          </div>
+        </div>
+        <div class="shot-card">
+          <img src="screenshots_65/04_gameplay.jpg" alt="Event prompt changing the daily target">
+          <div class="body">
+            <h3>Daily Events</h3>
+            <p>Gym workouts, hikes, and holidays shift the calorie target. Adapt the plan to keep the week on track.</p>
+          </div>
+        </div>
+        <div class="shot-card">
+          <img src="screenshots_65/05_complete.jpg" alt="Week complete celebration screen">
+          <div class="body">
+            <h3>Week Complete</h3>
+            <p>Finish all seven days with matching calories and macros to clear the level and unlock the next week.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>About Morning Pantry Balance</h2>
+      <div class="card">
+        <p>Morning Pantry Balance is a breakfast planning puzzle game built with SpriteKit. Each level is a full week: seven breakfasts to plan from a shared pantry of ingredients. Every food item has calories, carbs, protein, and fat values, and each day has a target range the plate must match.</p>
+        <p>The game spans 50 levels. The first three levels are tutorial weeks with on-screen prompts that guide the next ingredient to tap. From level 4 onward, daily events such as gym workouts, soccer practice, and holiday dinners raise or lower the calorie target, adding a strategic layer to the plan.</p>
+        <p>Scoring is based on how close the plate lands to the target calories and macros. The pantry is limited, so the game checks ahead: if the remaining stock cannot cover the rest of the week, the level fails. Players can undo, clear the plate, and try again before confirming each day.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>How to Play</h2>
+      <div class="features">
+        <div class="feature-card">
+          <span class="step-num">1</span>
+          <h3>Open the Pantry</h3>
+          <p>Each level starts with a fixed set of ingredients. Review the stock and the seven-day target list before planning.</p>
+        </div>
+        <div class="feature-card">
+          <span class="step-num">2</span>
+          <h3>Build the Plate</h3>
+          <p>Tap food cards to add items to the plate. The calorie bar and macro readout update in real time as items are added.</p>
+        </div>
+        <div class="feature-card">
+          <span class="step-num">3</span>
+          <h3>Match the Target</h3>
+          <p>Keep total calories inside the day's range and keep carbs, protein, and fat within the macro tolerance.</p>
+        </div>
+        <div class="feature-card">
+          <span class="step-num">4</span>
+          <h3>Undo and Clear</h3>
+          <p>Use Undo to remove the last item, or Clear to reset the plate. Adjust freely before confirming the day.</p>
+        </div>
+        <div class="feature-card">
+          <span class="step-num">5</span>
+          <h3>Watch the Pantry</h3>
+          <p>The pantry is shared across all seven days. If the remaining stock cannot cover the rest of the week, the level fails.</p>
+        </div>
+        <div class="feature-card">
+          <span class="step-num">6</span>
+          <h3>Clear the Week</h3>
+          <p>Complete all seven days with matching targets to clear the level and unlock the next week of planning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <div class="features">
+        <div class="card">
+          <h3>How do I play?</h3>
+          <p>Tap food cards to build a plate that matches the day's calorie and macro targets. The first three levels include on-screen tutorial prompts that guide each step.</p>
+        </div>
+        <div class="card">
+          <h3>Does it need internet?</h3>
+          <p>No. Morning Pantry Balance is fully offline. No account, no ads, no in-app purchases, and no tracking.</p>
+        </div>
+        <div class="card">
+          <h3>Need help?</h3>
+          <p>Visit the App Store product page for support contact. The game stores progress locally on the device.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>App Information</h2>
+      <div class="info">
+        <div class="info-item"><span class="label">Genre</span><div class="value">Games / Puzzle</div></div>
+        <div class="info-item"><span class="label">Compatibility</span><div class="value">iOS 15.0 or later</div></div>
+        <div class="info-item"><span class="label">Device Support</span><div class="value">iPhone only</div></div>
+        <div class="info-item"><span class="label">Age Rating</span><div class="value">4+</div></div>
+        <div class="info-item"><span class="label">Version</span><div class="value">1.0</div></div>
+        <div class="info-item"><span class="label">Language</span><div class="value">English</div></div>
+        <div class="info-item"><span class="label">Privacy</span><div class="value">No data collected</div></div>
+        <div class="info-item"><span class="label">Bundle ID</span><div class="value">com.rosewood.morningpantrybalance.game</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>&copy; 2026 Morning Pantry Balance. All rights reserved.</div>
+    <div><a href="/privacy.html">Privacy Policy</a></div>
+  </footer>
+</body>
+</html>
